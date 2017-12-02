@@ -22,12 +22,12 @@ public partial class CaveGenerator : MonoBehaviour {
         float theta = Random.Range(0, 2 * Mathf.PI); //angle to instantiate rock at 
 
         //Spot against wall to Instantiate object at
-        float x_wall = Mathf.Cos(theta) * radius;  
-        float z_wall = Mathf.Sin(theta) * radius;
+		float x_wall = radius;// Mathf.Cos(theta) * radius;  
+		float z_wall = radius; //Mathf.Sin(theta) * 
 
         Quaternion rotation = Quaternion.identity;
 
-        rotation.eulerAngles = new Vector3(0, (theta*180f)/Mathf.PI , 0);
+        //rotation.eulerAngles = new Vector3(0, (theta*180f)/Mathf.PI , 0);
         Instantiate(rock, new Vector3(_x + x_wall, _y, _z + z_wall), rotation);
         
 
