@@ -9,21 +9,18 @@ public partial class CaveGenerator : MonoBehaviour {
 
 
     //Level Variables
-    int tunnelDepth = 2000;
+    int tunnelDepth = 5000;
     int obstacleMinFreq;
     int obstacleMaxFreq;
     float doubleChance;
     float gapChance;
     int maxGapLength;
-    static int level;
 
 
     private float radius;
 
 	// Use this for initialization
 	void Start () {
-
-        level = 1;
         obstacleMinFreq = 15;
         obstacleMaxFreq = 5;
         doubleChance = 5;

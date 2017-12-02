@@ -5,7 +5,6 @@ using UnityEngine;
 public class DiverScript : MonoBehaviour {
 
 	private Rigidbody rgb;
-	private Transform transform;
 	public float moveSpeed;
 	public float fallingSpeed;
 	public float breakSpeed;
@@ -14,9 +13,8 @@ public class DiverScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rgb = GetComponent<Rigidbody> ();
-		transform = GetComponent<Transform> ();
 		moveSpeed = 10f;
-		fallingSpeed = -15f;
+		fallingSpeed = -20f;
 		breakSpeed = 5f;
 	}
 
