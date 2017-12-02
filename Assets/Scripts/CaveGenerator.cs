@@ -8,10 +8,12 @@ public partial class CaveGenerator : MonoBehaviour {
 
 	int tunnelDepth = 100;
 
+
     private float radius;
 
 	// Use this for initialization
 	void Start () {
+
         
         // Instantiate Rock Obstacles
         rock1 = Resources.Load<GameObject>("Prefabs/rock1Parent");
