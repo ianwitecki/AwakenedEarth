@@ -47,7 +47,7 @@ public partial class CaveGenerator : MonoBehaviour {
             //Create Obstacles
             if (obstacleFreq == 0)
             {
-                ObstacleGenerate(x, y, z);
+                //ObstacleGenerate(x, y, z);
                 obstacleFreq = 2;
             } else
             {
