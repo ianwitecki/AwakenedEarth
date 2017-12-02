@@ -14,11 +14,11 @@ public partial class CaveGenerator : MonoBehaviour {
 	void Start () {
         
         // Instantiate Rock Obstacles
-        rock1 = Resources.Load<GameObject>("Prefabs/rock1");
-        rock2 = Resources.Load<GameObject>("Prefabs/rock2");
-        rock3 = Resources.Load<GameObject>("Prefabs/rock3");
-        rock4 = Resources.Load<GameObject>("Prefabs/rock4");
-        rock5 = Resources.Load<GameObject>("Prefabs/rock5");
+        rock1 = Resources.Load<GameObject>("Prefabs/rock1Parent");
+        rock2 = Resources.Load<GameObject>("Prefabs/rock2Parent");
+        rock3 = Resources.Load<GameObject>("Prefabs/rock3Parent");
+        rock4 = Resources.Load<GameObject>("Prefabs/rock4Parent");
+        rock5 = Resources.Load<GameObject>("Prefabs/rock5Parent");
 
         obstacles = new List<GameObject> { rock1, rock2, rock3, rock4, rock5 };
 
@@ -36,8 +36,11 @@ public partial class CaveGenerator : MonoBehaviour {
 
 		for (int y = 0; y < tunnelDepth; y+=5) {
 
-			float x = Mathf.PerlinNoise(y/25f, 0) * 6f;
-			float z = Mathf.PerlinNoise(y/25f, 0) * 6f;
+            //float x = Mathf.PerlinNoise(y/25f, 0) * 6f;
+            //float z = Mathf.PerlinNoise(y/25f, 0) * 6f;
+
+            float x = 0;
+            float z = 0;
 
             //Create Walls
             Instantiate (caveTorus, new Vector3 (x, y, z), Quaternion.identity);
@@ -47,7 +50,7 @@ public partial class CaveGenerator : MonoBehaviour {
             //Create Obstacles
             if (obstacleFreq == 0)
             {
-                //ObstacleGenerate(x, y, z);
+                ObstacleGenerate(x, y, z);
                 obstacleFreq = 2;
             } else
             {
