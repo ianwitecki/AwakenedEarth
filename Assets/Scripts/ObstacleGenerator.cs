@@ -27,7 +27,7 @@ public partial class CaveGenerator : MonoBehaviour {
 
         Quaternion rotation = Quaternion.identity;
 
-        rotation.eulerAngles = new Vector3(0, (theta*180f)/Mathf.PI , 0);
+        rotation.eulerAngles = new Vector3(0, 360 - (theta*180f)/Mathf.PI , 0);
         Instantiate(rock, new Vector3(_x + x_wall, _y, _z + z_wall), rotation);
         
 
