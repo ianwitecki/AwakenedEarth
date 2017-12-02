@@ -22,7 +22,7 @@ public class DiverScript : MonoBehaviour {
 		fallingSpeed = -10f;
 		sideways = false;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		float inputX = Input.GetAxis ("Horizontal");
@@ -30,14 +30,14 @@ public class DiverScript : MonoBehaviour {
 
 		bool inputSpace = Input.GetButton ("Jump");
 
-		rgb.velocity = new Vector3 (inputX * moveSpeed, fallingSpeed, inputY * moveSpeed);
-		//rgb.AddForceAtPosition (new Vector3(inputX * moveSpeed, 0, inputY * moveSpeed),rgb.position);
-		//rgb.angularVelocity = new Vector3 (inputX * 1f, inputY * 1f, 0f);
-		//rgb.AddRelativeTorque(rgb.velocity * 1f);
-		//rgb.velocity = new Vector3 (inputX * moveSpeed, 0, inputY * moveSpeed);
+		rgb.velocity = (transform.forward * inputY * Time.deltaTime * 1000) + (transform.up * fallingSpeed);
 
 		if (inputSpace) {
 			StartCoroutine (rotateDown ());
+		}
+
+		if (inputX != 0) {
+			transform.Rotate (Vector3.up * inputX);
 		}
 	}
 
@@ -63,3 +63,4 @@ public class DiverScript : MonoBehaviour {
 		}
 	}
 }
+
