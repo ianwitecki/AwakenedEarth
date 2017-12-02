@@ -14,3 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CaveGeneratorScene.unity
     guid: 16544d2c22ee0624ba56a1cbdad34273
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 3c804af7a12413243a59f0d52adc1ce2
+  - enabled: 1
+    path: Assets/Scenes/GameWin.unity
+    guid: 17555582949ae9d45a6e035ff9db6ef6
