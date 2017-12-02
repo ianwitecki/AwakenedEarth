@@ -397,6 +397,14 @@ Prefab:
       propertyPath: m_Name
       value: Cube (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4465484828283226, guid: 0849a04c83cc44018b26907ebde5a524, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465484828283226, guid: 0849a04c83cc44018b26907ebde5a524, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0849a04c83cc44018b26907ebde5a524, type: 2}
   m_IsPrefabParent: 0

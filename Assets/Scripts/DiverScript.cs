@@ -8,10 +8,7 @@ public class DiverScript : MonoBehaviour {
 	private Transform transform;
 	public float moveSpeed;
 	public float fallingSpeed;
-
-	public bool sideways;
-
-	int rotateSpeed = 50;
+	public float breakSpeed;
 
 
 	// Use this for initialization
@@ -19,48 +16,29 @@ public class DiverScript : MonoBehaviour {
 		rgb = GetComponent<Rigidbody> ();
 		transform = GetComponent<Transform> ();
 		moveSpeed = 10f;
-		fallingSpeed = -10f;
-		sideways = false;
+		fallingSpeed = -15f;
+		breakSpeed = 5f;
 	}
 
 	// Update is called once per frame
 	void Update () {
 		float inputX = Input.GetAxis ("Horizontal");
 		float inputY = Input.GetAxis ("Vertical");
-
-		bool inputSpace = Input.GetButton ("Jump");
+		bool inputSpace = Input.GetButton ("Dive");
 
 		rgb.velocity = (transform.forward * inputY * Time.deltaTime * 1000) + (transform.up * fallingSpeed);
-
+		//print ("HELLOOO");
 		if (inputSpace) {
-			StartCoroutine (rotateDown ());
+			print("space");
+			rgb.velocity = rgb.velocity + (transform.up * breakSpeed);
 		}
 
 		if (inputX != 0) {
+			print ("HELLOOO");
 			transform.Rotate (Vector3.up * inputX);
 		}
 	}
-
-	IEnumerator rotateDown () {
-		bool spaceInput = Input.GetButton ("Jump");
-
-		if (spaceInput) {
-			while (spaceInput && (transform.rotation.x > -90f)) {
-				yield return new WaitForSeconds (0.01f);
-				transform.Rotate (Vector3.left * Time.deltaTime * 2);
-				spaceInput = Input.GetButton ("Jump");
-			}
-			StartCoroutine (rotateUp ());
-		} else {
-			yield return new WaitForSeconds (0f);
-		}
-	}
-
-	IEnumerator rotateUp () {
-		while (transform.rotation.x < 0) {
-			yield return new WaitForSeconds (0.01f);
-			transform.Rotate (Vector3.right * Time.deltaTime * 2);
-		}
-	}
 }
+
+
 
