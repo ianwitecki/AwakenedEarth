@@ -31,7 +31,9 @@ public class DiverScript : MonoBehaviour {
 		bool inputSpace = Input.GetButton ("Jump");
 
 		rgb.velocity = new Vector3 (inputX * moveSpeed, fallingSpeed, inputY * moveSpeed);
-		rgb.angularVelocity = new Vector3 (inputX * 1f, inputY * 1f, 0f);
+		//rgb.AddForceAtPosition (new Vector3(inputX * moveSpeed, 0, inputY * moveSpeed),rgb.position);
+		//rgb.angularVelocity = new Vector3 (inputX * 1f, inputY * 1f, 0f);
+		//rgb.AddRelativeTorque(rgb.velocity * 1f);
 		//rgb.velocity = new Vector3 (inputX * moveSpeed, 0, inputY * moveSpeed);
 
 		if (inputSpace) {
