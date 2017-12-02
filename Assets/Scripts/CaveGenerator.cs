@@ -38,11 +38,11 @@ public partial class CaveGenerator : MonoBehaviour {
 
 		for (int y = 0; y < tunnelDepth; y+=5) {
 
-            //float x = Mathf.PerlinNoise(y/25f, 0) * 6f;
-            //float z = Mathf.PerlinNoise(y/25f, 0) * 6f;
+            float x = Mathf.PerlinNoise(y/25f, 0) * 6f;
+            float z = Mathf.PerlinNoise(y/25f, 0) * 6f;
 
-            float x = 0;
-            float z = 0;
+           // float x = 0;
+           // float z = 0;
 
             //Create Walls
             Instantiate (caveTorus, new Vector3 (x, y, z), Quaternion.identity);
