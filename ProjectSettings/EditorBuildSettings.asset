@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f5447899eb029b540802fe64da2bbac7
+  - enabled: 1
+    path: Assets/Scenes/ProverbScene.unity
+    guid: fdabda1dea6f68540911ebabf9b55677
+  - enabled: 1
+    path: Assets/Scenes/CaveGeneratorScene.unity
+    guid: 16544d2c22ee0624ba56a1cbdad34273
