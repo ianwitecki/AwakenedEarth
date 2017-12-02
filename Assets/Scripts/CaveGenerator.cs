@@ -24,7 +24,7 @@ public partial class CaveGenerator : MonoBehaviour {
 
         caveTorus = Resources.Load<GameObject> ("Prefabs/CaveCylinder");
 
-        radius = 5;
+        radius = 7f;
 
 		GenerateCave ();
 
@@ -36,8 +36,8 @@ public partial class CaveGenerator : MonoBehaviour {
 
 		for (int y = 0; y < tunnelDepth; y+=5) {
 
-			float x = Mathf.PerlinNoise(y/7f, 0) * 10f;
-			float z = Mathf.PerlinNoise(y/7f, 0) * 10f;
+			float x = Mathf.PerlinNoise(y/25f, 0) * 6f;
+			float z = Mathf.PerlinNoise(y/25f, 0) * 6f;
 
             //Create Walls
             Instantiate (caveTorus, new Vector3 (x, y, z), Quaternion.identity);
