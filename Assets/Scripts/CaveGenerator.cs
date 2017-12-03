@@ -51,11 +51,11 @@ public partial class CaveGenerator : MonoBehaviour {
         int obstacleFreq = obstacleMinFreq;
         bool onGap = false;
 
-
 		for (int y = 0; y < tunnelDepth; y+=5) {
 			
             float x = Mathf.PerlinNoise(y/25f, 0) * 6f;
             float z = Mathf.PerlinNoise(y/25f, 0) * 6f;
+
             System.Random rand = new System.Random();
 
             //Create Walls
