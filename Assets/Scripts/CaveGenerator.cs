@@ -7,9 +7,8 @@ public partial class CaveGenerator : MonoBehaviour {
 	private GameObject caveTorus;
 
 
-
     //Level Variables
-    int tunnelDepth = 5000;
+    int tunnelDepth = 10000;
     int obstacleMinFreq;
     int obstacleMaxFreq;
     float doubleChance;
@@ -21,6 +20,8 @@ public partial class CaveGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		Cursor.visible = false;
         obstacleMinFreq = 15;
         obstacleMaxFreq = 5;
         doubleChance = 5;
@@ -34,9 +35,10 @@ public partial class CaveGenerator : MonoBehaviour {
         rock4 = Resources.Load<GameObject>("Prefabs/rock4Parent");
         rock5 = Resources.Load<GameObject>("Prefabs/rock5Parent");
 
+
         obstacles = new List<GameObject> { rock1, rock2, rock3, rock4, rock5 };
 
-        caveTorus = Resources.Load<GameObject> ("Prefabs/CaveCylinder");
+		caveTorus = Resources.Load<GameObject> ("Prefabs/CaveCylinder");
 
         radius = 7f;
 
@@ -51,7 +53,7 @@ public partial class CaveGenerator : MonoBehaviour {
 
 
 		for (int y = 0; y < tunnelDepth; y+=5) {
-
+			
             float x = Mathf.PerlinNoise(y/25f, 0) * 6f;
             float z = Mathf.PerlinNoise(y/25f, 0) * 6f;
             System.Random rand = new System.Random();
@@ -97,5 +99,6 @@ public partial class CaveGenerator : MonoBehaviour {
 		}
 
 	}	
+
 
 }

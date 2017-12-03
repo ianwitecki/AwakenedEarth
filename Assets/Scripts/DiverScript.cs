@@ -14,7 +14,7 @@ public class DiverScript : MonoBehaviour {
 	void Start () {
 		rgb = GetComponent<Rigidbody> ();
 		moveSpeed = 10f;
-		fallingSpeed = -20f;
+		fallingSpeed = -30f;
 		breakSpeed = 5f;
 	}
 
