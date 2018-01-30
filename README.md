@@ -1,6 +1,6 @@
 ## Awakened Earth	
 
-![Title Shot](/Assets/Images/awakenedTitle)
+![Title Shot](/Assets/Images/awakenedTitle.png)
 
 This is a 3D unity that my team made in an 8 hour game jam. It is loosely based off of the Point Break trial Awakening Earth about skydiving into a cave. Enjoy!
 
